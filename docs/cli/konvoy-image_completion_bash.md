@@ -20,7 +20,7 @@ MacOS:
   $ konvoy-image completion bash > /usr/local/etc/bash_completion.d/konvoy-image
 
 You will need to start a new shell for this setup to take effect.
-  
+
 
 ```
 konvoy-image completion bash
@@ -44,4 +44,3 @@ konvoy-image completion bash
 ### SEE ALSO
 
 * [konvoy-image completion](konvoy-image_completion.md)	 - generate the autocompletion script for the specified shell
-

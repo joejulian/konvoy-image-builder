@@ -30,4 +30,3 @@ $(pip_artifacts_dir):
 download-pip-package: $(pip_artifacts_dir)
 	docker run --rm -v "$(pip_artifacts_dir):/opt/dkp/pip/" -w /opt/dkp/pip $(PIP_PACKAGES_GETTER_IMAGE):latest \
 		/bin/sh -c 'mkdir -p $(packages) && pip3 download --destination-directory=/opt/dkp/pip/$(packages) $(packages)'
-

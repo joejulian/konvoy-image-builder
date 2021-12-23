@@ -36,4 +36,3 @@ konvoy-image completion powershell [flags]
 ### SEE ALSO
 
 * [konvoy-image completion](konvoy-image_completion.md)	 - generate the autocompletion script for the specified shell
-

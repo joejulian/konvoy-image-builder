@@ -17,7 +17,6 @@ aws ec2 deregister-image --region "$REGION" --image-id "$ID"
 echo "Deleting Snapshots:"
 echo "$SNAPSHOT"
 
-for SNAPSNOT_ID in $SNAPSNOT_IDS
-do
+for SNAPSNOT_ID in $SNAPSNOT_IDS; do
   aws ec2 delete-snapshot --region "$REGION" --snapshot-id "$SNAPSNOT_ID"
 done

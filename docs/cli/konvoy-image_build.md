@@ -44,4 +44,3 @@ build --region us-west-2 --source-ami=ami-12345abcdef images/ami/centos-7.yaml
 ### SEE ALSO
 
 * [konvoy-image](konvoy-image.md)	 - Create, provision, and customize images for running Konvoy
-
