@@ -5,17 +5,17 @@
 # configure even earlier with a cloud-init / Container Linux Config.
 set -e
 
+# shellcheck disable=SC1091
 source /etc/os-release
 
-[[ "${NAME,,}" != *"flatcar"* ]] && exit 0
+[[ ${NAME,,} != *"flatcar"* ]] && exit 0
 # Prevent systemd from starting `update-engine` and `locksmithd`. The default
 # system unit files check for `/usr/.noupdate`, but since `/usr` is a read-only
 # filesystem we cannot create this. Add `/etc/.noupdate` to perform the same
 # role.
-for service in locksmithd update-engine
-do
-    mkdir -p /etc/systemd/system/${service}.service.d
-    cat > /etc/systemd/system/${service}.service.d/10-noupdate.conf <<EOF
+for service in locksmithd update-engine; do
+  mkdir -p /etc/systemd/system/${service}.service.d
+  cat >/etc/systemd/system/${service}.service.d/10-noupdate.conf <<EOF
 [Unit]
 ConditionPathExists=!/etc/.noupdate
 EOF
@@ -31,4 +31,4 @@ systemctl stop update-engine
 # required. However, setting this ensures that we are conservative if
 # `locksmithd` is re-enabled.
 sed -i '/^REBOOT_STRATEGY=.*/d' /etc/flatcar/update.conf
-echo 'REBOOT_STRATEGY=off' >> /etc/flatcar/update.conf
+echo 'REBOOT_STRATEGY=off' >>/etc/flatcar/update.conf

@@ -43,4 +43,3 @@ konvoy-image completion zsh [flags]
 ### SEE ALSO
 
 * [konvoy-image completion](konvoy-image_completion.md)	 - generate the autocompletion script for the specified shell
-

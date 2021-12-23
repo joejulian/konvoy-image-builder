@@ -20,4 +20,3 @@ Create, provision, and customize images for running Konvoy
 * [konvoy-image provision](konvoy-image_provision.md)	 - provision to an inventory.yaml or hostname, note the comma at the end of the hostname
 * [konvoy-image validate](konvoy-image_validate.md)	 - validate existing infrastructure
 * [konvoy-image version](konvoy-image_version.md)	 - Version for konvoy-image
-

@@ -38,4 +38,3 @@ konvoy-image completion fish [flags]
 ### SEE ALSO
 
 * [konvoy-image completion](konvoy-image_completion.md)	 - generate the autocompletion script for the specified shell
-

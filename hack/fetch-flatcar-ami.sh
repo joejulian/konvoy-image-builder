@@ -8,20 +8,18 @@
 
 set -e -x
 
-if [ -z "${AWS_DEFAULT_REGION}" ]
-then
-    # If running in an AWS region, use it
-    AWS_DEFAULT_REGION=$(curl -sSL http://169.254.169.254/latest/meta-data/placement/region) || true
+if [ -z "${AWS_DEFAULT_REGION}" ]; then
+  # If running in an AWS region, use it
+  AWS_DEFAULT_REGION=$(curl -sSL http://169.254.169.254/latest/meta-data/placement/region) || true
 fi
-if [ -z "${AWS_DEFAULT_REGION}" ]
-then
-    echo "Need AWS_DEFAULT_REGION to be set" >&2
-    exit 1
+if [ -z "${AWS_DEFAULT_REGION}" ]; then
+  echo "Need AWS_DEFAULT_REGION to be set" >&2
+  exit 1
 fi
 
 export AWS_DEFAULT_REGION
 
 # Directory containing this script
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
 packer build "${SCRIPT_DIR}/flatcar-ami.pkr.hcl"

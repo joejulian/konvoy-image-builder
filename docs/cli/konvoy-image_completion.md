@@ -30,4 +30,3 @@ See each sub-command's help for details on how to use the generated script.
 * [konvoy-image completion fish](konvoy-image_completion_fish.md)	 - generate the autocompletion script for fish
 * [konvoy-image completion powershell](konvoy-image_completion_powershell.md)	 - generate the autocompletion script for powershell
 * [konvoy-image completion zsh](konvoy-image_completion_zsh.md)	 - generate the autocompletion script for zsh
-
